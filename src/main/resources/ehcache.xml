@@ -1,0 +1,31 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://www.ehcache.org/ehcache.xsd"
+         updateCheck="true" monitoring="autodetect" dynamicConfig="true">
+
+    <!-- Default cache configuration -->
+    <defaultCache
+        maxEntriesLocalHeap="1000"
+        timeToLiveSeconds="600"
+        memoryStoreEvictionPolicy="LRU"
+        diskExpiryThreadIntervalSeconds="120"
+        diskSpoolBufferSizeMB="30"/>
+
+    <!-- Cache for Customer entity -->
+    <cache name="com.ordermanagement.entity.Customer"
+           maxEntriesLocalHeap="1000"
+           timeToLiveSeconds="600"
+           eternal="false"
+           memoryStoreEvictionPolicy="LRU"
+           diskSpoolBufferSizeMB="30"
+           diskExpiryThreadIntervalSeconds="120"/>
+
+    <!-- Cache for Order entity -->
+    <cache name="com.ordermanagement.entity.Order"
+           maxEntriesLocalHeap="1000"
+           timeToLiveSeconds="600"
+           eternal="false"
+           memoryStoreEvictionPolicy="LRU"
+           diskSpoolBufferSizeMB="30"
+           diskExpiryThreadIntervalSeconds="120"/>
+
+</ehcache>
